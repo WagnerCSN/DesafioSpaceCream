@@ -1,0 +1,168 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    font-size: 62.5%;
+
+    --ff-heading: 'Staatliches', 'sans-serif';
+    --ff-texting: 'Palanquin', 'sans-serif';
+   
+    --hue: 218;
+    --bg-header: hsl(var(--hue), 17%, 62%);
+    --bg-header-logo: hsl(var(--hue), 18%, 79%);
+    --bg-heading-2: hsl(var(--hue), 18%, 79%);
+    --bg-texting: hsl(var(--hue), 91%, 96%);
+
+
+    --fc-heading: hsl(0, 0%, 100%);
+    --fc-texting: hsl(274, 84%, 12%);
+    --fc-textind-card: hsla(232, 17%, 35%);
+
+    --fs-heading: clamp(2rem, 1rem + 3vw ,4rem);
+    --fs-texting: clamp(1rem, 0.5rem + 3vw, 2rem);
+
+}
+
+body{
+    font-size: 1.6rem;
+}
+.page{
+    margin: 0 auto;
+    max-width: 38.4rem;
+    min-width: 25.4rem;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 27.9rem;
+    background: var(--bg-header);
+    position: relative;
+    z-index: 1;
+}
+
+header h1{
+    font-family: var(--ff-heading);
+    color: var(--fc-heading);
+    font-size: var(--fs-heading);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    line-height: 3.4rem;
+    font-weight: 400;
+    top: 21.6rem;
+    position: absolute;
+    z-index: 3;
+}
+
+header img{
+    margin: 3.2rem 0 4rem;
+    width: 13.7rem;
+    height: 13.7rem;
+    filter: drop-shadow(0px 6px 6px rgba(0, 0, 0, 0.25));
+}
+
+header::after{
+    content: '';
+    background: var(--bg-heading-2);
+    width: 100%;
+    height: 4.9rem;
+    left: 0;
+    top: 20.1rem;
+    z-index: 2;
+}
+/*--------------------------------------MAIN----------------------------------------------------------*/
+main{
+    max-width: 100%;
+    padding: 0 3.2rem 6rem 3.2rem;
+    
+}
+
+main p{
+    margin: 1.4rem 2rem 6.3rem;
+    text-align: center;
+    font-family: var(--ff-texting);
+    font-weight: 400;
+    font-size: 1.3rem;
+    
+    color: var(--fc-texting);
+    padding: 0 2rem;
+   
+}
+
+img{
+    width: 100%;
+    height: auto;
+}
+
+.card{
+    position: relative;
+    display: grid;
+    gap: 3.2rem;
+    
+}
+
+.card img{
+    min-width: 20rem;
+    object-fit: cover;
+    transition: all  2s;
+    animation: downtop 1s  1;
+}
+
+.card img:hover{
+    transform: scale(1.05);
+    opacity: 0.8;
+}
+
+.card h2{
+    opacity: 0;
+    top: 2.2rem;
+    right: 1.8rem;
+    position: absolute;
+    font-family: var(--ff-texting);
+    font-size: var(--fs-texting);
+    color: var(--fc-textind-card);
+    text-transform: uppercase;
+    font-weight: 400;
+    
+    letter-spacing: 0.05em;
+    width: fit-content;
+    background-color: var(--bg-texting);
+    border-radius: 2rem;
+    padding:  5px 24px;
+    line-height: 3.5rem;
+    animation: topdown 1s 700ms 1 forwards;
+}
+
+.wrapper-card{
+    display: grid;
+    gap: 3.2rem;
+}
+
+@keyframes topdown{
+    0%{
+        opacity: 0;
+        transform: translateY(-150px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes downtop{
+    0%{
+        opacity: 0;
+        transform: translatey(30px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translatey(0);
+    }
+}
